@@ -20,7 +20,19 @@
         "prebuild:test": "npm run lint",
         "build:test": "cross-env ENVIRONMENT=test quasar build",
         "prebuild:prod": "npm run lint",
-        "build:prod": "cross-env ENVIRONMENT=prod quasar build"
+        "build:prod": "cross-env ENVIRONMENT=prod quasar build",
+        "dev-pwa": "quasar dev --mode pwa",
+        "dev-pwa:desa": "cross-env ENVIRONMENT=desa quasar dev --mode pwa",
+        "dev-pwa:test": "cross-env ENVIRONMENT=test quasar dev --mode pwa",
+        "dev-pwa:prod": "cross-env ENVIRONMENT=prod quasar dev --mode pwa",
+        "prebuild-pwa": "npm run lint",
+        "build-pwa": "quasar build --mode pwa",
+        "prebuild-pwa:desa": "npm run lint",
+        "build-pwa:desa": "cross-env ENVIRONMENT=desa quasar build --mode pwa",
+        "prebuild-pwa:test": "npm run lint",
+        "build-pwa:test": "cross-env ENVIRONMENT=test quasar build --mode pwa",
+        "prebuild-pwa:prod": "npm run lint",
+        "build-pwa:prod": "cross-env ENVIRONMENT=prod quasar build --mode pwa"
     },
     "dependencies": {
         "@quasar/extras": "^1.0.0",
@@ -41,7 +53,8 @@
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-vue": "^8.5.0",
         "eslint-webpack-plugin": "^3.1.1",
-        "prettier": "^2.5.1"
+        "prettier": "^2.5.1",
+        "workbox-webpack-plugin": "^6.5.3"
     },
     "browserslist": [
         "last 10 Chrome versions",
