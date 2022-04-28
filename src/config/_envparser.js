@@ -9,17 +9,17 @@ https://docs.npmjs.com/cli/v8/using-npm/scripts
 const dotenv = require("dotenv");
 
 const files = {
-  ...dotenv.config({ path: "./src/config/.env" }).parsed,
-  ...dotenv.config({ path: "./src/config/.env.local" }).parsed,
-  ...dotenv.config({ path: `./src/config/${process.env.ENVIRONMENT}.env` }).parsed,
-  ...dotenv.config({ path: `./src/config/${process.env.ENVIRONMENT}.env.local` }).parsed
+    ...dotenv.config({ path: "./src/config/.env" }).parsed,
+    ...dotenv.config({ path: "./src/config/.env.local" }).parsed,
+    ...dotenv.config({ path: `./src/config/${process.env.ENVIRONMENT}.env` }).parsed,
+    ...dotenv.config({ path: `./src/config/${process.env.ENVIRONMENT}.env.local` }).parsed
 };
 
 module.exports = function () {
-  for (key in files) {
-    if (typeof files[key] !== "string") {
-      files[key] = JSON.stringify(files[key]);
+    for (key in files) {
+        if (typeof files[key] !== "string") {
+            files[key] = JSON.stringify(files[key]);
+        }
     }
-  }
-  return files;
+    return files;
 };
